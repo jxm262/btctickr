@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="csrf-token" content="<%= _csrf %>">
+      <title><%= title %> - Hackathon Starter</title>
+      <link rel="stylesheet" href="/assets/main-f7562345bf9e833562d6e6b13706a2a7.css" />
+   </head>
+   <body>
+      <div class="navbar navbar-default navbar-fixed-top">
+         <div class="container">
+            <div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><span class="ion-cube"></span>Project name</a></div>
+            <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="/">Home</a></li>
+                  <li><a href="/api">API Examples</a></li>
+                  <li><a href="/contact">Contact</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+               
+               	<% if(!user){ %>
+                  <li><a href="/login">Login</a></li>
+                  <li><a href="/signup">Create Account</a></li>
+               	<% } else { %>
+               		<li class="dropdown">
+                    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                    		<% if(user.profile.picture) { %>
+                    			<img src="https://avatars.githubusercontent.com/u/3460750?v=3">Justin Maat&nbsp;<i class="caret"></i></img>
+                    		<% } else { %>
+                    			<img src="<%= user.gravatar(60) %>"> <%= user.profile.name || user.email || user.id %> &nbsp; <i class="caret"></i></img>
+                    		<% } %>
+                    	</a>
+                    	<ul class="dropdown-menu">
+                    		<li><a href="/account"><span class="ion-person"></span>My Account</a></li>
+                    		<li class="divider"></li>
+                    		<li><a href="/logout"><span class="ion-log-out"></span> Logout</a></li>
+                    	</ul>
+                  	</li>
+                <% } %>
+                 
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+      
+         <% if(flash.errors) { %>
+         	<div class="alert alert-danger fade in">
+          	  <button type="button" data-dismiss="alert" class="close"><span class="ion-close-circled"></span></button>
+          	  <% flash.errors.forEach(function(error){ %>
+            	  <div><%= error.msg %></div>
+              <% }); %>
+         	</div>         
+         <% } %>
+         
+         <% if(flash.success) { %>
+         	<div class="alert alert-success fade in">
+          	  <button type="button" data-dismiss="alert" class="close"><span class="ion-close-circled"></span></button>
+          	  <% flash.success.forEach(function(_success){ %>
+            	  <div><%= _success.msg %></div>
+              <% }); %>
+         	</div>         
+         <% } %>   
+         
+         <% if(flash.info) { %>
+         	<div class="alert alert-info fade in">
+          	  <button type="button" data-dismiss="alert" class="close"><span class="ion-close-circled"></span></button>
+          	  <% flash.info.forEach(function(_info){ %>
+            	  <div><%= _info.msg %></div>
+              <% }); %>
+         	</div>         
+         <% } %>   
+               
+         <h1>Hackathon Starter</h1>
+         <p class="lead">A boilerplate for Node.js web applications.</p>
+         <hr>
+         <div class="row">
+            <div class="col-sm-6">
+               <h2>Heading</h2>
+               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+               <p><a href="#" role="button" class="btn btn-default">View details »</a></p>
+            </div>
+            <div class="col-sm-6">
+               <h2>Heading</h2>
+               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+               <p><a href="#" role="button" class="btn btn-default">View details »</a></p>
+            </div>
+            <div class="col-sm-6">
+               <h2>Heading</h2>
+               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+               <p><a href="#" role="button" class="btn btn-default">View details »</a></p>
+            </div>
+            <div class="col-sm-6">
+               <h2>Heading</h2>
+               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+               <p><a href="#" role="button" class="btn btn-default">View details »</a></p>
+            </div>
+         </div>
+      </div>
+      <footer>
+         <div class="container text-center">
+            <p class="pull-left">© 2015 Company, Inc. All Rights Reserved</p>
+            <ul class="pull-right list-inline">
+               <li><a href="https://github.com/sahat/hackathon-starter">GitHub Project</a></li>
+               <li><a href="https://github.com/sahat/hackathon-starter/issues">Issues</a></li>
+            </ul>
+         </div>
+      </footer>
+      <script src="/assets/lib/jquery-2.1.3.min-fb3597cbe1cdc76949bce8bf3fb36e1c.js"></script>
+      <script src="/assets/lib/bootstrap.min-a9fd3e10700812ef5a95296618c718b8.js"></script>
+      <script src="/assets/main-5940a6324e281cb0aa565525686b0743.js"></script>
+      <script src="/assets/application-1aa72d0ce60eb8e85eec5034cae14f44.js"></script>
+   </body>
+</html>
