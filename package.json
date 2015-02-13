@@ -6,7 +6,7 @@
     "url": "https://github.com/jxm262/btctickr"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "mocha"
   },
   "dependencies": {
