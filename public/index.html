@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="<%= _csrf %>">
     <link rel="shortcut icon" href="assets/ico/favicon.png">						<!-- TODO: make favicon -->
 
-    <title> <%= title %> - Bitcoin Price Analytics </title>
+    <title>  - Bitcoin Price Analytics </title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/libs/bootstrap.css" rel="stylesheet">
@@ -35,6 +35,144 @@
 		{{partial 'footer'}}
 	  </script>
 
+	  <script type="text/x-handlebars" id="test">
+		<!-- ==== HEADERWRAP ==== -->
+	    <div id="headerwrap" name="home">
+			<header class="clearfix">
+	  		 		<h1><span class="icon icon-shield"></span></h1>
+	  		 		<p>BitCoin Ticker - Alerts - Charts</p>
+					<p>me = </p>
+					
+					{{#each v in model}}
+					<p> {{ v }} </p>
+					{{/each}}
+	  		 		<p>All On 1 Website</p>
+
+				<div class="container todo" style="margin-top: 60px">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-3" >
+							<form action="/signup" method="post">
+								<div class="input-group">
+									<input class="btn btn-lg" name="email" id="email" type="text" placeholder="Your Email" required>
+									<input class="btn btn-lg" style="margin-left: 5px; margin-right: 5px;" name="password" id="password" type="password" placeholder="Enter Password" required>
+									<button class="btn btn-lg" style="background-color:#17baef" type="submit">Signup !</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				
+	  		</header>	    
+	    </div><!-- /headerwrap -->
+
+		<!-- ==== GREYWRAP ==== -->
+		<div id="greywrap">
+			<div class="row">
+				<div class="col-lg-4 callout">
+					<i class="fa fa-btc fa-5x"></i> 
+					<h2>Live Bitcoin Prices</h2>
+					<p>See current bitcoin prices from around the globe!  Make your own custom tickers with our analytic functions (avg, spreads, etc..)</p>
+				</div><!-- col-lg-4 -->
+					
+				<div class="col-lg-4 callout">
+					<i class="fa fa-bell-o fa-5x"></i> 
+					<h2>Free Price Alerts !</h2>
+					<p>
+						Seriously, email alerts are 100% free!
+						<br/>We'll even have Low cost sms text alerts coming soon.
+					</p>
+				</div><!-- col-lg-4 -->	
+				
+				<div class="col-lg-4 callout">
+					<i class="fa fa-line-chart fa-5x"></i> 
+					<h2>Technical Analysis</h2>
+					<p>Price charting analytics are coming soon.  Awesome visualizations and charting all in your browser.</p>
+				</div><!-- col-lg-4 -->	
+			</div><!-- row -->
+		</div><!-- greywrap -->
+		
+		<!-- ==== ABOUT ==== -->
+		<div class="container" id="about" name="about">
+			<div class="row white">
+				<br/>
+				<h1 class="centered">Current BitCoin Prices</h1>
+				<hr/>
+				<div class="col-lg-12">
+					<p>Latest Prices</p>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+		
+		<div class="container" id="alerts" name="alerts">
+			<div class="well">
+				<div class="row white">
+					<br/>
+					<h1 class="centered">Bitcoin Alerts</h1>
+					<hr/>
+	
+					<div class="col-lg-12">
+						<p>Latest Prices</p>
+					</div>
+				</div><!-- row -->
+			</div><!-- container -->
+		</div>
+		
+		<!-- ==== SECTION DIVIDER1 -->
+		<section class="section-divider textdivider divider1" style="background:url('http://www.prepbootstrap.com/Content/images/shared/shield/bg/divider1.jpg');">
+			<div class="container">
+				<h1>TECHNICAL ANALYSIS</h1>
+				<hr/>
+				<p>Graphing and charting utilities to help in your trading strategies.</p>
+			</div><!-- container -->
+		</section><!-- section -->
+		
+
+		<!-- ==== TEAM MEMBERS ==== -->
+		<div class="container" id="team" name="team">
+			<br>
+			<div class="row white centered">
+				<h1 class="centered">Meet The Team</h1>
+				<hr>
+				<br>
+				<br>
+				<div class="col-lg-offset-3 col-lg-6 centered">
+					<img class="img img-circle" src="images/me.jpg" height="120px" width="120px" alt="">
+					<br>
+					<h4><b>Justin Maat</b></h4>
+					<a href="https://github.com/jxm262" class="fa fa-github-square"></a>&nbsp;&nbsp;
+					<a href="https://www.linkedin.com/in/justinmaat" class="fa fa-linkedin-square"></a>&nbsp;&nbsp;
+					<a href="http://stackoverflow.com/users/2145619/justin-maat" class="fa fa-stack-overflow"></a>&nbsp;&nbsp;
+					<a href="http://www.reddit.com/user/jxm262" class="fa fa-reddit-square"></a>
+					<p>
+						Yup, it's just me for now :)   Follow me on Github!  I built this site as an experiment to learn Node.js and out of a new-found curiousity in bitcoin.  
+						But, this site is becoming quite a bit to manage, so I'm very open to finding a collaborator to help me take it to the next level.  					
+						I have a ton of ideas for this site and plan to update this constantly, so please check back often!  If anyone wants to collaborate or has any suggestions, feel free to drop me a message.
+						<br/>
+						<br/>
+						<strong>Also Please!!</strong>  Send me any ideas you may have or feedback on the usability of this platform!
+					</p>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+
+		
+		<!-- ==== SECTION DIVIDER6 ==== -->
+		<section class="section-divider textdivider divider6" style="background:url('http://www.prepbootstrap.com/Content/images/shared/shield/bg/divider6.jpg');">
+			<div class="container">
+				<h1>I BUILT THIS ON SATURDAY MORNINGS.  IN MY FREE TIME.  IN MY LOCAL COFFEESHOP</h1>
+				<hr/>
+				<p>
+					Feel free to show support by buying me coffee :)  &nbsp; <br/>
+					I'm paying for the server, the email servicer, giving away my code, all out of the kindness of my heart.</p>
+				<p>
+					<a class="fa fa-btc" href="https://www.changetip.com/tipme/jxm262" style="color: yellow">
+						<b>Donate some bits on ChangeTip!</b>
+					</a>
+				</p>
+			</div><!-- container -->
+		</section><!-- section -->
+	  </script>
+
 	  <script type="text/x-handlebars" id="home">
 		<!-- ==== HEADERWRAP ==== -->
 	    <div id="headerwrap" name="home">
@@ -51,9 +189,16 @@
 								<div class="input-group">
 									<input class="btn btn-lg" name="email" id="email" type="text" placeholder="Your Email" required>
 									<input class="btn btn-lg" style="margin-left: 5px; margin-right: 5px;" name="password" id="password" type="password" placeholder="Enter Password" required>
-									<button class="btn btn-lg" style="background-color:#17baef" type="submit">Signup !</button>
+									
+									<button class="btn btn-lg" style="background-color:#17baef" {{action 'signup'}}>Signup !</button>
 								</div>
 							</form>
+							<br/>
+{{#each}}
+<p>1 - 
+{{csrf}}
+</p>
+{{/each}}
 						</div>
 					</div>
 				</div>
@@ -242,6 +387,8 @@
   	<script src="js/libs/jquery-1.10.2.js"></script>
   	<script src="js/libs/ember-template-compiler-1.10.0.js"></script>
   	<script src="js/libs/ember-1.10.0.debug.js"></script>
+  	<script src="js/libs/ember-data.min.js"></script>
+  	<script src="js/libs/localstorage_adapter.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
 	<script src="js/libs/retina.js"></script>
